@@ -131,14 +131,17 @@ while running:
         if direction == "middle" and time()-last_click_time > 1:
             playing = not playing
             last_click_time = time()
+            break
     if abs(rotation['x']) > 2 and time()-last_click_time > 1:
         playing = not playing
         last_click_time = time()
+        break
 
     if playing:
         if collision_enemy_player(player_position, ghost_position):
             playing = False
             running = False
+            break
 
         score = draw(food_positions, score)
         eat_food(food, player_position)
