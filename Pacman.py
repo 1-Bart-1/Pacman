@@ -61,20 +61,6 @@ g, y, y, y, y, y, g, g
 ]
 sense.clear()
 
-def print_score(score):
-    if highscore < score:
-        file = open("highscore.txt", "w")
-        file.write("Your highest score is: " + str(score))
-        file.close()
-    scorescreen = []
-    for i in range(64):
-        pixel = [0, 0, 0]
-        if i<score:
-            pixel = green
-        elif (64 - highscore) <= i:
-            pixel = map_color
-        scorescreen.append(pixel)
-    sense.set_pixels(scorescreen)
 
 
 def collision_enemy_player(player_position, ghost_position):
